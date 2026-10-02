@@ -4,70 +4,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
 
+    <title>My Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Ripple Animation */
+        .ripple-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            from {
+                width: 10px;
+                height: 10px;
+                opacity: 0.6;
+            }
+
+            to {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="text-center">
 
+    <!-- Header -->
     <header>
-        <h1>Loraez, Ralph Damiel B.</h1>
-         <h2>Welcome to my portfolio website!</h2>
-        <button id="switch">Switch</button>
-        <h2>Welcome to my portfolio website!</h2>
 
-        <nav>
-            <span>@sukuna</span>
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact us</a></li>
+        <h1 class="text-4xl md:text-5xl font-bold text-purple-600 bg-yellow-300 inline-block p-2">
+            Loraez, Ralph Damiel B.
+        </h1>
+
+        <h2 class="text-3xl md:text-4xl font-bold mt-4">
+            Hello World
+        </h2>
+
+        <!-- Ripple Button -->
+        <button
+            class="ripple-btn bg-black text-white px-6 py-3 rounded-lg mt-5 hover:bg-red-500 hover:text-black transition duration-500 cursor-pointer"
+            onclick="ripple(event)">
+            Click Me
+        </button>
+
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center mx-[50px] mt-8">
+
+            <ul class="flex justify-end gap-5 p-0 m-0 list-none w-full">
+
+                <li>
+                    <a href="#projects"
+                        class="transition-colors duration-500 hover:text-red-500">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services"
+                        class="transition-colors duration-500 hover:text-red-500">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact"
+                        class="transition-colors duration-500 hover:text-red-500">
+                        Contact Us
+                    </a>
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
 
-    <main>
-        <section id="projects">
-            <h2>My Projects</h2>
-            <p>
+
+    <!-- Main -->
+    <main class="flex flex-wrap gap-[30px] p-[50px] m-[50px]">
+
+        <!-- Projects -->
+        <section
+            id="projects"
+            class="flex-1 min-w-[280px] border-2 border-black p-5 bg-cyan-300">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-600">
+                My Projects
+            </h2>
+
+            <p class="mt-4">
                 Personal portfolio, payroll system, company website,
                 startup website, and compliance monitoring system.
             </p>
+
         </section>
 
-        <section id="services">
-            <h2>My Services</h2>
-            <p>
+
+        <!-- Services -->
+        <section
+            id="services"
+            class="flex-1 min-w-[280px] border-2 border-black p-5">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-600">
+                My Services
+            </h2>
+
+            <p class="mt-4">
                 Website Creation, System Creation, AI Automation,
                 Database Management, Project Management, Systems Analyst.
             </p>
+
         </section>
 
-        <section id="contact">
-            <h2>Let's build together!</h2>
 
-            <form action="#">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+        <!-- Contact -->
+        <section
+            id="contact"
+            class="flex-1 min-w-[280px] border-2 border-black p-5 bg-green-500">
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-600">
+                Let's build together!
+            </h2>
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+            <form
+                action="#"
+                class="flex flex-col gap-5 mt-5">
 
-                <button type="submit">Send Message</button>
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="border border-black rounded-md p-2">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="border border-black rounded-md p-2">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="border border-black rounded-md p-2"></textarea>
+
+                <button
+                    type="submit"
+                    class="bg-black text-white px-6 py-3 rounded-lg hover:bg-red-500 hover:text-black transition duration-500 cursor-pointer">
+
+                    Send Message
+
+                </button>
+
             </form>
+
         </section>
+
     </main>
 
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Ralph Damiel Loraez. All rights reserved.</p>
+
+        <p class="mt-5 mb-5">
+            &copy; 2026 Ralph Damiel Loraez. All rights reserved.
+        </p>
+
     </footer>
 
-    <script src="script.js"></script>
-</body>
 
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
 
 </html>

@@ -1,12 +1,12 @@
 console.log("Hello mundo")
-const Myname = "Dequito, Jive Miguel V.";
+const Myname = "Loraez, Ralph Damiel B.";
 console.log("name: " + Myname);
 let age = 20;
-let number = "09109436835";
+let number = "09665607646";
 console.log("Age: " + age)
 console.log("Number: " + number);
 
-const address = "Brgy.6A Victorias City, Neg";
+const address = "Brgy.12 Victorias City, Neg";
 console.log("Address: " + address);
 
 function greet(name) {
